@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+
+<html class="light" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AQUA BOND | Architectural Material Excellence</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&amp;family=Source+Sans+3:wght@300;400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "inverse-primary": "#e9c349",
+                    "on-secondary-fixed-variant": "#474746",
+                    "on-tertiary-fixed": "#00174b",
+                    "surface-container-low": "#f5f4ed",
+                    "surface-dim": "#dbdad4",
+                    "on-primary": "#ffffff",
+                    "surface-variant": "#e4e2dc",
+                    "surface-container-high": "#eae8e2",
+                    "secondary": "#5f5e5e",
+                    "error-container": "#ffdad6",
+                    "on-background": "#1b1c18",
+                    "on-error": "#ffffff",
+                    "tertiary-fixed-dim": "#b4c5ff",
+                    "on-surface": "#1b1c18",
+                    "on-secondary-fixed": "#1c1b1b",
+                    "tertiary": "#415ba4",
+                    "surface": "#fbf9f3",
+                    "surface-tint": "#735c00",
+                    "surface-container-highest": "#e4e2dc",
+                    "on-surface-variant": "#3d3b34", /* Darkened for better contrast on cream backgrounds */
+                    "secondary-fixed": "#e5e2e1",
+                    "surface-container-lowest": "#ffffff",
+                    "inverse-on-surface": "#f2f1ea",
+                    "inverse-surface": "#30312d",
+                    "surface-container": "#efeee8",
+                    "secondary-fixed-dim": "#c8c6c5",
+                    "surface-bright": "#fbf9f3",
+                    "error": "#ba1a1a",
+                    "on-tertiary-container": "#254188",
+                    "primary": "#735c00",
+                    "primary-container": "#C5A059",
+                    "on-tertiary-fixed-variant": "#27438a",
+                    "on-secondary": "#ffffff",
+                    "on-primary-fixed-variant": "#574500",
+                    "on-primary-container": "#554300",
+                    "outline-variant": "#d0c5af",
+                    "secondary-container": "#e2dfde",
+                    "on-tertiary": "#ffffff",
+                    "primary-fixed": "#ffe088",
+                    "on-secondary-container": "#4a4a49", /* Darkened for readability */
+                    "primary-fixed-dim": "#e9c349",
+                    "on-primary-fixed": "#241a00",
+                    "on-error-container": "#93000a",
+                    "background": "#fbf9f3",
+                    "tertiary-fixed": "#dbe1ff",
+                    "tertiary-container": "#97b0ff",
+                    "outline": "#7f7663",
+                    "gold-accent": "#C5A059",
+                    "gold-accent-dark": "#A68648" /* High contrast variant for text on light backgrounds */
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "stack-md": "32px",
+                    "container-max": "1280px",
+                    "gutter": "24px",
+                    "margin-desktop": "64px",
+                    "stack-lg": "80px",
+                    "unit": "8px",
+                    "margin-mobile": "24px",
+                    "stack-sm": "16px",
+                    "section-gap": "160px"
+            },
+            "fontFamily": {
+                    "headline-xl": ["Playfair Display"],
+                    "body-md": ["Source Sans 3"],
+                    "headline-md": ["Playfair Display"],
+                    "body-lg": ["Source Sans 3"],
+                    "headline-lg": ["Playfair Display"],
+                    "label-md": ["Source Sans 3"],
+                    "headline-lg-mobile": ["Playfair Display"]
+            },
+            "fontSize": {
+                    "headline-xl": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-lg": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "label-md": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #fbf9f3;
+            color: #1b1c18;
+            overflow-x: hidden;
+        }
+        .parallax-bg {
+            transition: transform 0.1s ease-out;
+        }
+        .gold-border {
+            border-color: #C5A059;
+        }
+        .modal-overlay {
+            background-color: rgba(20, 20, 18, 0.9); /* Increased opacity for better focus */
+            backdrop-filter: blur(8px);
+        }
+        details > summary::-webkit-details-marker {
+            display: none;
+        }
+        .text-shadow-strong {
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+    </style>
+</head>
+<body class="font-body-md selection:bg-gold-accent selection:text-white" data-mode="connect">
+<!-- Section 0: Welcome Pop-up -->
+<div class="fixed inset-0 z-[100] flex items-center justify-center p-margin-mobile modal-overlay transition-opacity duration-500 opacity-0" id="welcome-modal" style="display: none;">
+<div class="bg-surface max-w-lg w-full p-10 relative border border-gold-accent/40 shadow-2xl">
+<button class="absolute top-4 right-4 text-on-surface hover:text-gold-accent transition-colors" onclick="closeModal()">
+<span class="material-symbols-outlined font-bold">close</span>
+</button>
+<div id="modal-form-content">
+<div class="text-center mb-8">
+<span class="font-label-md text-[11px] text-gold-accent-dark uppercase tracking-[0.3em] font-bold block mb-2">Ưu đãi độc quyền</span>
+<h2 class="font-headline-md text-on-surface">Nhận Mẫu Thử &amp; Báo Giá Miễn Phí</h2>
+<p class="font-body-md text-on-surface-variant mt-4 font-medium">Để lại thông tin để chuyên gia Aqua Bond hỗ trợ dự án của bạn ngay hôm nay.</p>
+</div>
+<form class="space-y-4" id="popup-lead-form" onsubmit="submitPopupLead(event)">
+<input class="w-full bg-white border border-outline-variant px-4 py-3 focus:ring-1 focus:ring-gold-accent focus:border-gold-accent outline-none font-label-md text-label-md text-on-surface" id="popup-name" placeholder="Họ và tên" required="" type="text"/>
+<input class="w-full bg-white border border-outline-variant px-4 py-3 focus:ring-1 focus:ring-gold-accent focus:border-gold-accent outline-none font-label-md text-label-md text-on-surface" id="popup-phone" pattern="(0|\+84)[0-9\s.-]{8,12}" placeholder="Số điện thoại / Zalo" required="" title="Vui lòng nhập số điện thoại hợp lệ (VD: 0901234567)" type="tel"/>
+<button class="w-full bg-gold-accent text-white py-4 font-label-md text-label-md font-bold uppercase tracking-widest hover:brightness-110 transition-all" type="submit">Nhận Ngay</button>
+</form>
+<div class="text-center mt-6">
+<button class="font-label-md text-[11px] text-on-surface-variant uppercase tracking-widest font-bold hover:text-primary underline underline-offset-4" onclick="closeModal()">Bỏ qua</button>
+</div>
+</div>
+<div class="hidden text-center py-8" id="modal-success-content">
+<span class="material-symbols-outlined text-gold-accent text-6xl font-bold block mb-6">check_circle</span>
+<h2 class="font-headline-md text-on-surface mb-4">Cảm ơn bạn!</h2>
+<p class="font-body-md text-on-surface-variant font-medium">Chuyên gia Aqua Bond sẽ liên hệ với bạn trong vòng <span class="font-bold text-gold-accent-dark">15 phút</span>.</p>
+<button class="mt-8 px-10 py-3 bg-gold-accent text-white font-label-md text-label-md font-bold uppercase tracking-widest hover:brightness-110 transition-all" onclick="closeModal()">Đóng</button>
+</div>
+</div>
+</div>
+<!-- Section 1: Navigation -->
+<nav class="fixed top-0 w-full z-50 bg-surface/95 backdrop-blur-xl border-b border-outline-variant/40 flex justify-between items-center px-margin-desktop py-4 lg:py-6 shadow-sm">
+<div class="font-headline-md text-headline-md text-primary tracking-tighter font-bold">AQUA BOND</div>
+<div class="hidden lg:flex gap-10 items-center">
+<a class="font-label-md text-label-md uppercase tracking-widest text-primary border-b-2 border-gold-accent pb-1 font-bold" href="#">Sản phẩm</a>
+<a class="font-label-md text-label-md uppercase tracking-widest text-on-surface font-semibold hover:text-gold-accent transition-colors" href="#specs">Thông số</a>
+<a class="font-label-md text-label-md uppercase tracking-widest text-on-surface font-semibold hover:text-gold-accent transition-colors" href="#applications">Ứng dụng</a>
+<a class="font-label-md text-label-md uppercase tracking-widest text-on-surface font-semibold hover:text-gold-accent transition-colors" href="#testimonials">Đánh giá</a>
+</div>
+<div class="flex items-center gap-6">
+<a class="hidden md:flex items-center gap-2 text-primary font-bold" href="tel:0900000000">
+<span class="material-symbols-outlined text-gold-accent-dark">call</span>
+<span class="font-label-md text-label-md">090.XXX.XXXX</span>
+</a>
+<button class="px-8 py-2 bg-gold-accent text-white font-label-md text-label-md font-bold uppercase tracking-widest hover:brightness-110 transition-all active:scale-95 duration-200" onclick="scrollToForm()">
+            Nhận Báo Giá
+        </button>
+</div>
+</nav>
+<!-- Section 2: Hero Update -->
+<header class="relative h-screen w-full flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="A premium architectural catalog scene" class="w-full h-full object-cover parallax-bg brightness-75" src="https://lh3.googleusercontent.com/aida/AP1WRLuwQWu2hPPAG7pkuDPI_66HqEoRMqpgWPnyg1GUonDvWFaH6lOftLGjKwlVNZ8SIXSORjWK72hokNNie2xwqu-lc8y6GsOmqlZPPN6bi2ORaY3T0H6N6zWEld1dRF08kXGEvK1SoogqW5vkQt2HHehyODr19aOYh7wkKA_IuzhCBx8Ub41h346N4cg0nIb60-Cc4BWNIrlGk2sCrLRWep38Hu8nXdzEgLkox2lJEzPATRBZvbpSfIR_FqMa" style="transform: translateY(28.8px) scale(1.0144);"/>
+<div class="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/60"></div>
+</div>
+<div class="relative z-10 text-center px-margin-mobile transition-all duration-1000 opacity-100">
+<div class="mb-4 overflow-hidden">
+<span class="block font-label-md text-label-md uppercase tracking-[0.4em] text-white font-bold text-shadow-strong">Tinh hoa Vật liệu Kiến trúc</span>
+</div>
+<h1 class="font-headline-xl text-[64px] md:text-[120px] leading-tight text-white tracking-tighter text-shadow-strong">AQUA BOND</h1>
+<div class="flex flex-col items-center gap-6 mt-6">
+<p class="font-body-lg text-body-lg text-white max-w-2xl mx-auto tracking-wide uppercase font-bold text-shadow-strong">Sức mạnh kết dính lên đến <span class="text-gold-accent border-b-2 border-gold-accent">100–150kg</span></p>
+<div class="flex flex-wrap justify-center gap-4 mt-4">
+<button class="px-10 py-4 bg-gold-accent text-white font-label-md text-label-md font-bold uppercase tracking-widest hover:brightness-110 transition-all shadow-xl" onclick="scrollToForm()">Mua Ngay</button>
+<button class="px-10 py-4 border-2 border-white text-white font-label-md text-label-md font-bold uppercase tracking-widest hover:bg-white hover:text-black transition-all backdrop-blur-sm" onclick="document.getElementById('demo').scrollIntoView({behavior:'smooth'})">Xem Demo</button>
+</div>
+</div>
+</div>
+<div class="absolute bottom-12 left-margin-desktop hidden md:block">
+<div class="flex flex-col gap-4 border-l-2 border-gold-accent pl-6 py-2">
+<span class="font-label-md text-[11px] text-white/90 uppercase tracking-widest font-bold">Tiêu chuẩn quốc tế</span>
+<span class="font-label-md text-label-md uppercase text-white font-bold tracking-wider">CHỊU TẢI VƯỢT TRỘI</span>
+</div>
+</div>
+</header>
+<!-- Section 3: USP Strip -->
+<section class="bg-primary py-10 border-y border-gold-accent/40">
+<div class="px-margin-desktop max-w-container-max mx-auto grid grid-cols-2 lg:grid-cols-4 gap-8 transition-all duration-1000 opacity-100">
+<div class="flex items-center gap-4 justify-center lg:justify-start">
+<span class="material-symbols-outlined text-gold-accent text-4xl font-bold">weight</span>
+<div class="text-white">
+<p class="font-label-md text-[10px] uppercase tracking-widest opacity-80 font-bold">Sức mạnh</p>
+<p class="font-label-md text-label-md uppercase font-bold tracking-tight">Chịu tải 150kg</p>
+</div>
+</div>
+<div class="flex items-center gap-4 justify-center lg:justify-start">
+<span class="material-symbols-outlined text-gold-accent text-4xl font-bold">timer</span>
+<div class="text-white">
+<p class="font-label-md text-[10px] uppercase tracking-widest opacity-80 font-bold">Thời gian</p>
+<p class="font-label-md text-label-md uppercase font-bold tracking-tight">Kết dính 5-10 Phút</p>
+</div>
+</div>
+<div class="flex items-center gap-4 justify-center lg:justify-start">
+<span class="material-symbols-outlined text-gold-accent text-4xl font-bold">security</span>
+<div class="text-white">
+<p class="font-label-md text-[10px] uppercase tracking-widest opacity-80 font-bold">An toàn</p>
+<p class="font-label-md text-label-md uppercase font-bold tracking-tight">Foam-Safe Tech</p>
+</div>
+</div>
+<div class="flex items-center gap-4 justify-center lg:justify-start">
+<span class="material-symbols-outlined text-gold-accent text-4xl font-bold">sell</span>
+<div class="text-white">
+<p class="font-label-md text-[10px] uppercase tracking-widest opacity-80 font-bold">Cam kết</p>
+<p class="font-label-md text-label-md uppercase font-bold tracking-tight">Giá tốt nhất</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 4: Video Demo 1 (Primary Load Test) -->
+<section class="py-section-gap px-margin-desktop bg-surface" id="demo">
+<div class="max-w-6xl mx-auto transition-all duration-1000 opacity-100">
+<div class="text-center mb-16">
+<span class="font-label-md text-label-md uppercase text-gold-accent-dark font-bold tracking-[0.2em] block mb-4">KIỂM CHỨNG THỰC TẾ</span>
+<h2 class="font-headline-lg text-on-surface">Thử Nghiệm Chịu Tải 150kg</h2>
+</div>
+<div class="relative aspect-video bg-surface-container-high overflow-hidden border border-gold-accent/20 group shadow-lg">
+<div class="absolute inset-0 flex items-center justify-center z-10">
+<button class="w-20 h-20 bg-gold-accent text-white rounded-full flex items-center justify-center hover:scale-110 transition-transform shadow-2xl">
+<span class="material-symbols-outlined text-white text-5xl leading-none font-bold">play_arrow</span>
+</button>
+</div>
+<img alt="Video Placeholder" class="w-full h-full object-cover brightness-75 grayscale-[10%] group-hover:scale-105 transition-transform duration-1000" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHDoHaC4R-GkcaUmDqQLxw602PQUz4nTGqo6FL9rJmZoZaa3DDxR8Jn9JcsG6lGQxXopXjteiI0q19W27Pf9YbSVWEMRIHlyzqqgrL1iEZfL0i2ad5oQlQ-XkPx5Qj3o6NZ9GDYxEhTok4LRGLRtmkKnVbhC4UUni-UxDIFAdYJyhqPNnXBTfb45E6USYzMMtJT3jIed_6ME1ReDOE5nfZjXBA0X5XY_DeJFNt2LqbETqLcra80LnZCO5HnsV8arPdyCutkiDyFMni"/>
+<div class="absolute bottom-8 left-8 text-white z-10 bg-black/40 px-4 py-2 backdrop-blur-md">
+<p class="font-label-md text-label-md uppercase tracking-widest font-bold">Test Load thực tế trên vật liệu than tre</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 5: Problem/Solution -->
+<section class="py-section-gap bg-surface-container-low border-y border-outline-variant/40">
+<div class="px-margin-desktop max-w-container-max mx-auto transition-all duration-1000 opacity-100">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-gutter">
+<div class="p-12 border border-outline-variant/60 bg-white/70">
+<h3 class="font-headline-md text-error mb-8 flex items-center gap-4 font-bold">
+<span class="material-symbols-outlined font-bold">report_problem</span>
+                    Vấn đề Thường Gặp
+                </h3>
+<ul class="space-y-6">
+<li class="flex gap-4">
+<span class="material-symbols-outlined text-error font-bold">close</span>
+<p class="font-body-md text-on-surface font-semibold">Keo thông thường gây ăn mòn tấm than tre, làm hỏng bề mặt foam.</p>
+</li>
+<li class="flex gap-4">
+<span class="material-symbols-outlined text-error font-bold">close</span>
+<p class="font-body-md text-on-surface font-semibold">Độ bám dính yếu dẫn đến hiện tượng bong tróc sau thời gian ngắn.</p>
+</li>
+<li class="flex gap-4">
+<span class="material-symbols-outlined text-error font-bold">close</span>
+<p class="font-body-md text-on-surface font-semibold">Thời gian khô quá lâu làm chậm tiến độ thi công công trình.</p>
+</li>
+</ul>
+</div>
+<div class="p-12 border border-gold-accent bg-primary text-white shadow-xl">
+<h3 class="font-headline-md mb-8 flex items-center gap-4 font-bold">
+<span class="material-symbols-outlined text-gold-accent font-bold">verified</span>
+                    Giải pháp Aqua Bond
+                </h3>
+<ul class="space-y-6">
+<li class="flex gap-4">
+<span class="material-symbols-outlined text-gold-accent font-bold">check_circle</span>
+<p class="font-body-md font-bold text-white">Công nghệ Neutral Curing không ăn mòn foam, bảo vệ vật liệu tuyệt đối.</p>
+</li>
+<li class="flex gap-4">
+<span class="material-symbols-outlined text-gold-accent font-bold">check_circle</span>
+<p class="font-body-md font-bold text-white">Liên kết phân tử cực mạnh, chịu tải trọng lớn ngay tức thì.</p>
+</li>
+<li class="flex gap-4">
+<span class="material-symbols-outlined text-gold-accent font-bold">check_circle</span>
+<p class="font-body-md font-bold text-white">Khô bề mặt chỉ trong 5-10 phút, tối ưu năng suất thợ thi công.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 6: Product Lines -->
+<section class="py-section-gap px-margin-desktop bg-surface">
+<div class="text-center mb-20 transition-all duration-1000 opacity-100">
+<span class="font-label-md text-label-md uppercase text-gold-accent-dark font-bold tracking-[0.2em] block mb-4">BỘ SƯU TẬP</span>
+<h2 class="font-headline-lg text-on-surface">Lựa Chọn Cho Mọi Dự Án</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto transition-all duration-1000 opacity-100">
+<div class="group border-2 border-outline-variant/40 p-8 bg-surface-container-low hover:border-gold-accent transition-all">
+<div class="aspect-[4/5] overflow-hidden mb-8 bg-white flex items-center justify-center p-8 shadow-inner">
+<img alt="Aqua Bond Beige" class="h-full object-contain group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgil5t-mTFu5wlwa5KYjQu2mF2OUgQpXcxU9OCgTEYZt6HWL_zFRsIksBxqq8lnFv9WTUudcXwaFfV1PCpJeNZtebyUyVXJuzaEyfGj4mwvTr7anxuBi3DyYcTtTLg894Ix-bPZSIyY52A8kqcXKrtpjxKiYADGiWHYBo2arpSpbJi4xfI0QOhox_EKpt5JeVWYIiho4Ilt1_S2xHGJoHGEDj1ujbjZZ_f6Cou8vWr27XunSsBGTz3afiJ2nXm9CDwi3wDNViqnEIR"/>
+</div>
+<h3 class="font-headline-md text-on-surface mb-2 font-bold">Aqua Bond Beige (100kg)</h3>
+<p class="font-label-md text-gold-accent-dark font-bold uppercase mb-4 tracking-wider">Dành cho nội thất gỗ &amp; Nano</p>
+<p class="font-body-md text-on-surface-variant mb-6 leading-relaxed font-medium">
+                Phù hợp cho các công trình thi công tấm ốp nano, phào chỉ nhựa và nội thất gỗ công nghiệp với độ thẩm mỹ cao.
+            </p>
+<button class="w-full py-4 border-2 border-gold-accent text-gold-accent-dark font-label-md text-label-md font-bold uppercase tracking-widest hover:bg-gold-accent hover:text-white transition-all">Thông số chi tiết</button>
+</div>
+<div class="group border-2 border-gold-accent p-8 bg-surface-container-low shadow-lg hover:shadow-2xl transition-all">
+<div class="aspect-[4/5] overflow-hidden mb-8 bg-white flex items-center justify-center p-8 relative shadow-inner">
+<div class="absolute top-4 right-4 bg-gold-accent text-white px-4 py-1 font-label-md text-[11px] font-bold uppercase tracking-widest shadow-md">Bán chạy nhất</div>
+<img alt="Aqua Bond Clear" class="h-full object-contain group-hover:scale-105 transition-transform duration-500 brightness-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgil5t-mTFu5wlwa5KYjQu2mF2OUgQpXcxU9OCgTEYZt6HWL_zFRsIksBxqq8lnFv9WTUudcXwaFfV1PCpJeNZtebyUyVXJuzaEyfGj4mwvTr7anxuBi3DyYcTtTLg894Ix-bPZSIyY52A8kqcXKrtpjxKiYADGiWHYBo2arpSpbJi4xfI0QOhox_EKpt5JeVWYIiho4Ilt1_S2xHGJoHGEDj1ujbjZZ_f6Cou8vWr27XunSsBGTz3afiJ2nXm9CDwi3wDNViqnEIR"/>
+</div>
+<h3 class="font-headline-md text-on-surface mb-2 font-bold">Aqua Bond Clear (150kg)</h3>
+<p class="font-label-md text-gold-accent-dark font-bold uppercase mb-4 tracking-wider">Dòng High-Performance</p>
+<p class="font-body-md text-on-surface-variant mb-6 leading-relaxed font-medium">
+                Dòng keo trong suốt chịu lực cực đại, chuyên dụng cho tấm than tre, gương kính và các vật liệu kiến trúc nặng.
+            </p>
+<button class="w-full py-4 bg-gold-accent text-white font-label-md text-label-md font-bold uppercase tracking-widest hover:brightness-110 transition-all shadow-md">Thông số chi tiết</button>
+</div>
+</div>
+</section>
+<!-- Section 7: Application Gallery -->
+<section class="py-section-gap px-margin-desktop bg-surface-container-lowest" id="applications">
+<div class="mb-16 transition-all duration-1000 opacity-100">
+<span class="font-label-md text-label-md uppercase text-gold-accent-dark font-bold tracking-[0.2em] block mb-4">ỨNG DỤNG</span>
+<h2 class="font-headline-lg text-on-surface">Giải Pháp Cho Mọi Bề Mặt</h2>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 transition-all duration-1000 opacity-100">
+<div class="space-y-4 md:space-y-8">
+<div class="group relative overflow-hidden aspect-[3/4] shadow-md">
+<img alt="Wall panels" class="w-full h-full object-cover brightness-90 transition-transform duration-700 group-hover:scale-110 group-hover:brightness-100" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcQx7_hO0EKEO0bD73CVrnQ_Lad7OTLK4lhuUx1MM_HFNidm7tX49TbhG0CncdbaoYQtKQ6wGM_puWjPBHYMd9GaaVW8qboJ3uSA1_n9fWX-1OremsIUXvt0WXYIubtlDdKAIkpYxqw-oJnP-mYbzEc73WH6gpG1W8F6G59YaMdUca-Ai_wVRKc226Nbi2oX9XD4iOWvKcnbVrydoDlk8403JGiiRq3NuPC6v4AGsBFSxLV7LqQScIQ2fILPJGN59cMjk9ssG0IU0r"/>
+<div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+<span class="text-white font-label-md uppercase tracking-widest font-bold text-shadow-strong">Tấm Ốp Tường</span>
+</div>
+</div>
+<div class="group relative overflow-hidden aspect-square shadow-md">
+<img alt="Molding" class="w-full h-full object-cover brightness-90 transition-transform duration-700 group-hover:scale-110 group-hover:brightness-100" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqgHCH7Mvht8eA8VLWL4RcZasa7N2_wvFm43xTKvVQZY2MLHEXSss2DVL2xZx5VSHz9fzLSIRIeIcQsg5bcTkWp4ypOXTDt4m_SCXateeCaljgshB4AYhxRuvE6UAyY9hE_sChgy6vRaXkDS0envPu0sMzFcCsgvRoM6zTEdOj526T5OuSGsCj4E5CIXjpH55hA-vGc_C89-i0H_gsDySfYdjUu0vYMX9433kUtBfQOvwc1G0nVkfB5-gYGP7BCRjClbKiaj3LUZkl"/>
+<div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+<span class="text-white font-label-md uppercase tracking-widest font-bold text-shadow-strong">Phào Chỉ</span>
+</div>
+</div>
+</div>
+<div class="space-y-4 md:space-y-8 pt-8">
+<div class="group relative overflow-hidden aspect-square shadow-md">
+<img alt="Nano boards" class="w-full h-full object-cover brightness-90 transition-transform duration-700 group-hover:scale-110 group-hover:brightness-100" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4_SntTAqoqDXyRkvGwwvYITQR15GxXxS3t3oBIPJir-XIVQvIyFjkOSlejKujLZjC_-UPRiFKRGVTO9cZQuu0333hMx7cjw8WVRnz0iO0FG2wdxkwVZtLGzz2FythnlD2sDi6Fkza4X_EIi_Fj4bsqpn4Ffvp2f8761NI3cNM-QZaDCfxNxh7U-PptnXFfxql49uXtebjcR5S1xI6sd9hPs-kJ-EZtlMAdgxv6BHO8RUp4wd7HwUYSi5d3nGDRysMFfDvsiTUrGHB"/>
+<div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+<span class="text-white font-label-md uppercase tracking-widest font-bold text-shadow-strong">Tấm Nano</span>
+</div>
+</div>
+<div class="group relative overflow-hidden aspect-[3/4] shadow-md">
+<img alt="Mirrors" class="w-full h-full object-cover brightness-90 transition-transform duration-700 group-hover:scale-110 group-hover:brightness-100" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxJVlnGdrzCaR1JdzY8CraJZpZs1KtGppEWWQ_P4pI_1UcnyqBtN3WonymaXQ-WtsS-oWnu1Y7HHXZsrbTQKSbd_sPLIUn68jO7PgY9F4kKHDDGxRArg9vUO0YSrJx8iD0NVIUNKy1I4gpUUa5H2c78wurjTAk_Y2HnR3VJ1e-ktZLLnINN5f92tv12ipxvFh_eI-QqGKTFYxez4zLpuA24kJgsmMghUHy-pvfeyf0p0JLhrvjiVypjDLerEhNjAhkq_0-m3q3viFA"/>
+<div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+<span class="text-white font-label-md uppercase tracking-widest font-bold text-shadow-strong">Gương &amp; Kính</span>
+</div>
+</div>
+</div>
+<div class="space-y-4 md:space-y-8">
+<div class="group relative overflow-hidden aspect-[3/4] shadow-md">
+<img alt="Bamboo panels" class="w-full h-full object-cover brightness-90 transition-transform duration-700 group-hover:scale-110 group-hover:brightness-100" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEVGMGYuTEpW-KX8MhLvHoUkyg2rS6L_7ljHxd82X7qOCEBIJGM_nXeMdVTAn17cCf_mTcdDWVpTvTgNezTzMEPBkzsx2nE-jeQQF1p6XvInEHXxKQ2TlxJyqwIRnhrx83qbzyyr-1TAkhLpsrKqjhVFv43t7P-JKgf1SizzaE8bqLVz26h2K275RwiJLzV6q66AFYvUzEs4HK6RI3e-nacfR2GhQJcD4MoswXwHrBqLymss06DHjO8Z7VxEjazQ3943mIfQvBDoJ-"/>
+<div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+<span class="text-white font-label-md uppercase tracking-widest font-bold text-shadow-strong">Tấm Than Tre</span>
+</div>
+</div>
+<div class="group relative overflow-hidden aspect-square shadow-md">
+<img alt="Trim" class="w-full h-full object-cover brightness-90 transition-transform duration-700 group-hover:scale-110 group-hover:brightness-100" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAikh3aDc2CB34c70AIoBxhaw0HGHXBV74DnB5y3emv2RcCFC4rdF6huQ2tASI45sRXQagGTOk7dSlLrGBDp6x64sDf-V0S7oC3HQ4IE0pcXZCTUv5MQ2Ie-qoiyeRMmCPYt6YGr4qVxHC6zIj1xJAhsXeY1kYDVJXQ59Q2j7mxK86Keh_m2cuTB8Tm6N4zrVuvOWw9rW-aCxJRo_8_g3w7TVuFDKVqoR31aSNEL41MzPMiGS3zGVXZFx-viJ-QDn7JXXoEzKTXPndx"/>
+<div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+<span class="text-white font-label-md uppercase tracking-widest font-bold text-shadow-strong">Nẹp Trang Trí</span>
+</div>
+</div>
+</div>
+<div class="space-y-4 md:space-y-8 pt-8">
+<div class="group relative overflow-hidden aspect-square shadow-md">
+<img alt="Architecture" class="w-full h-full object-cover brightness-90 transition-transform duration-700 group-hover:scale-110 group-hover:brightness-100" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzLJaR31ZE_ftdryM3cVITk2DpcxPji9GE2Lsjq3mh4-HDbSS79JLXczJBak0KRR5KdeM8O8O2vH7Lsi8nA2BVpOP6bOyKmhwcqlH52hFO29FTI6dRtmczEiPMOrezKae1nsa7O3mWRYhFuOO_NzG0iRrlt3HGRwx7R0SOYJ0I8yvwAFQJSojnMpmnN3AB3LDlQMR1KTK2lHHI2Ut5QGBJvCQfESgWgpp8J_nObRlchNzVy1-LgpYSKTj001faRSXeSdLjJbuamTr3"/>
+</div>
+<div class="group relative overflow-hidden aspect-[3/4] shadow-md">
+<img alt="Interior" class="w-full h-full object-cover brightness-90 transition-transform duration-700 group-hover:scale-110 group-hover:brightness-100" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAru-XZYTcVXHpiZXkJmC0yOLuZKTHEk3b7-oX6jVBnS9gBjNDQlCoKKhTsF9QxngjnvHsRGXKGps1fljNXA3GZAZLzKdkWkPAz10b2FXBTxtweFQIGInj7J2V26d6KF901Sn7ogr_O6yhEiVnaACGJLqofZPUwDG6mg_Q384hpo2NoT0rec-5t6OgMorArQDxlXuWHtLwmI0EfAzO2jexZTXbHarsumhwNiUMOoaXj2oAXgj0kjv9GFRvTdoDZZ_oY2B-eYjSVs4O-"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 8: Specs & Comparison -->
+<section class="py-section-gap px-margin-desktop bg-surface" id="specs">
+<div class="max-w-4xl mx-auto transition-all duration-1000 opacity-100">
+<div class="text-center mb-16">
+<span class="font-label-md text-label-md uppercase text-gold-accent-dark font-bold tracking-[0.2em] block mb-4">SO SÁNH KỸ THUẬT</span>
+<h2 class="font-headline-lg text-on-surface">Hiệu Suất Vượt Trội</h2>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full border-collapse">
+<thead>
+<tr class="border-b-2 border-outline-variant">
+<th class="py-6 px-4 text-left font-label-md text-label-md text-on-surface uppercase font-bold tracking-wider">Đặc tính</th>
+<th class="py-6 px-4 text-center font-label-md text-label-md text-gold-accent-dark uppercase font-bold tracking-wider">Aqua Bond</th>
+<th class="py-6 px-4 text-center font-label-md text-label-md text-on-surface-variant uppercase opacity-70 font-bold tracking-wider">Keo thông thường</th>
+</tr>
+</thead>
+<tbody class="font-body-md text-on-surface">
+<tr class="border-b border-outline-variant/40 hover:bg-surface-container-low transition-colors">
+<td class="py-6 px-4 font-medium">Khả năng chịu tải (Max)</td>
+<td class="py-6 px-4 text-center font-bold text-primary">150kg</td>
+<td class="py-6 px-4 text-center opacity-70 font-medium">40-60kg</td>
+</tr>
+<tr class="border-b border-outline-variant/40 hover:bg-surface-container-low transition-colors">
+<td class="py-6 px-4 font-medium">Thời gian khô bề mặt</td>
+<td class="py-6 px-4 text-center font-bold text-primary">5 - 10 Phút</td>
+<td class="py-6 px-4 text-center opacity-70 font-medium">30 - 60 Phút</td>
+</tr>
+<tr class="border-b border-outline-variant/40 hover:bg-surface-container-low transition-colors">
+<td class="py-6 px-4 font-medium">Độ an toàn cho Foam/Than tre</td>
+<td class="py-6 px-4 text-center font-bold text-gold-accent-dark">Tuyệt đối an toàn</td>
+<td class="py-6 px-4 text-center opacity-70 font-medium">Có nguy cơ ăn mòn</td>
+</tr>
+<tr class="border-b border-outline-variant/40 hover:bg-surface-container-low transition-colors">
+<td class="py-6 px-4 font-medium">Mùi &amp; Hóa chất</td>
+<td class="py-6 px-4 text-center font-bold text-primary">Không mùi (Eco-friendly)</td>
+<td class="py-6 px-4 text-center opacity-70 font-medium">Mùi nồng, khó chịu</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-6 px-4 font-medium">Độ bền thời tiết</td>
+<td class="py-6 px-4 text-center font-bold text-primary">-40°C đến +90°C</td>
+<td class="py-6 px-4 text-center opacity-70 font-medium">-10°C đến +50°C</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<!-- Section 9: Video Demo 2 (Ceiling & Safety) -->
+<section class="py-section-gap px-margin-desktop bg-surface-container-low border-y border-outline-variant/40">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center max-w-6xl mx-auto transition-all duration-1000 opacity-100">
+<div class="order-2 lg:order-1">
+<span class="font-label-md text-label-md uppercase text-gold-accent-dark font-bold tracking-[0.2em] block mb-4">THI CÔNG TRẦN &amp; TƯỜNG</span>
+<h2 class="font-headline-md text-on-surface mb-6 font-bold">Chống Chảy Xệ - Bám Dính Tức Thì</h2>
+<p class="font-body-md text-on-surface-variant mb-8 leading-relaxed font-medium">
+                Thử nghiệm thi công trực tiếp trên trần cao. Keo Aqua Bond với độ nhớt đặc biệt đảm bảo không nhỏ giọt, giữ vật liệu cố định ngay lập tức mà không cần định vị phức tạp.
+            </p>
+<div class="flex gap-8">
+<div class="text-center">
+<p class="font-headline-md text-gold-accent-dark font-bold">0%</p>
+<p class="font-label-md text-[11px] uppercase text-on-surface font-bold tracking-tighter">Rủi ro chảy xệ</p>
+</div>
+<div class="w-[2px] bg-outline-variant/50"></div>
+<div class="text-center">
+<p class="font-headline-md text-gold-accent-dark font-bold">100%</p>
+<p class="font-label-md text-[11px] uppercase text-on-surface font-bold tracking-tighter">An toàn vật liệu</p>
+</div>
+</div>
+</div>
+<div class="order-1 lg:order-2 relative aspect-[4/3] bg-white border border-gold-accent/40 group overflow-hidden shadow-xl">
+<div class="absolute inset-0 flex items-center justify-center z-10">
+<button class="w-16 h-16 bg-gold-accent text-white rounded-full flex items-center justify-center shadow-lg hover:brightness-110 transition-all">
+<span class="material-symbols-outlined font-bold">play_arrow</span>
+</button>
+</div>
+<img alt="Video Placeholder 2" class="w-full h-full object-cover brightness-75 group-hover:scale-105 transition-transform duration-1000" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWJj-14obQgAwxA1EtMTEozEhEbDyUo2ExFLD3YR9pdLcG5gWieJy5WgKrKjhg597RNyGSUD0nZ_9HsyKdrSgb7vNzQKtHKvVxgh8RUs2FcFbkwkxUaad05P9Ew5c-2TR_rnj2lFoyfRoczpPoZMX3wKJReuJwJ4vzWxTFOolLW47ta9cP5sUEjtcJQXm2h4hGq5ggjSMz521MIZLa0RCc6XhbILOSjmr7XfYjPqu_e6_oDDTJeeXLqEsGvbZOsA-9eiHwNzJJkgjA"/>
+</div>
+</div>
+</section>
+<!-- Section 10: Social Proof (Evidence) -->
+<section class="py-section-gap px-margin-desktop bg-surface" id="testimonials">
+<div class="text-center mb-16 transition-all duration-1000 opacity-100">
+<span class="font-label-md text-label-md uppercase text-gold-accent-dark font-bold tracking-[0.2em] block mb-4">MINH CHỨNG</span>
+<h2 class="font-headline-lg text-on-surface">Được Tin Dùng Bởi Chuyên Gia</h2>
+</div>
+<div class="columns-1 md:columns-2 lg:columns-3 gap-8 space-y-8 transition-all duration-1000 opacity-100">
+<div class="break-inside-avoid p-8 border border-outline-variant/40 bg-surface-container-low shadow-sm hover:shadow-md transition-shadow">
+<div class="flex gap-1 text-gold-accent-dark mb-4">
+<span class="material-symbols-outlined text-sm font-bold">star</span><span class="material-symbols-outlined text-sm font-bold">star</span><span class="material-symbols-outlined text-sm font-bold">star</span><span class="material-symbols-outlined text-sm font-bold">star</span><span class="material-symbols-outlined text-sm font-bold">star</span>
+</div>
+<p class="font-body-md italic text-on-surface mb-6 font-medium">"Chưa bao giờ tôi thấy loại keo nào ăn ý với tấm than tre như Aqua Bond. Thi công nhanh, không hôi, thợ của tôi cực kỳ hài lòng."</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-outline-variant overflow-hidden border-2 border-gold-accent/20">
+<img alt="User" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAm0POFbVRd_YjdqeoaVmQLwZGaEMKhEDY0fSH2AozM2JBcTE_q32HJMAJ1VoX6i2vvrsgX__hLjGPz58KwMb5jTVdNE-xywZ0_kMvI0hz7CBYiVpJcXlxCt58HAZbzbOfPnTaQkTU5LoOA4XVFORjIafnMyJerOwyx3UB0iOVTm-fj65I_82l3i0VpCakIDMbdiF_TJ0Qifi1AaDqMXit1Zrst-xsHA2zf5GYb-kwp_0ur-a3G7Dtf62iMIrxIidK6ey8yBN08ogZ1"/>
+</div>
+<div>
+<p class="font-label-md text-on-surface font-bold uppercase tracking-wide">KTS. Minh Tuấn</p>
+<p class="font-label-md text-[10px] text-on-surface-variant font-bold uppercase">Giám đốc Nội thất Alpha</p>
+</div>
+</div>
+</div>
+<div class="break-inside-avoid border border-outline-variant/40 overflow-hidden shadow-sm group">
+<img alt="Project Photo" class="w-full grayscale brightness-90 group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZBiGQGpMqbfLpOG0qkiy8tcCeKOGfjpUP7fC7UB2VpclfNzKyCWKGgw4zK_ZY0CY6hCHHRItLc4PnKtj4xctRVsSRH-Q0Jo0V3GwNGsjZw-bArZfyBuE5tbml5QQB42obf5bUlaRb0-CI5xVZpnbpvStJpoBpU1g6izyZFlOk3-5y_wHL9oFEblbi-rSyik1vv4XcZqpkxjvlCNzgodW6QWEfVN0GWVNS0ILdefAyPwt3tcwaLIHBkiF0zHbPkqPy9lFljcciimgu"/>
+<div class="p-6 bg-white">
+<p class="font-label-md text-[11px] text-gold-accent-dark font-bold uppercase tracking-widest">Dự án: Villa Thảo Điền</p>
+</div>
+</div>
+<div class="break-inside-avoid p-8 border border-outline-variant/40 bg-white shadow-md">
+<p class="font-body-md italic text-on-surface mb-6 font-medium">"Giải quyết triệt để vấn đề bong tróc phào chỉ nhựa ở các góc khuất. Keo khô rất nhanh giúp chúng tôi đẩy tiến độ dự án lên 20%."</p>
+<div class="flex items-center gap-4">
+<div>
+<p class="font-label-md text-on-surface font-bold uppercase tracking-wide">Anh Hoàng</p>
+<p class="font-label-md text-[10px] text-on-surface-variant font-bold uppercase">Thầu thi công Landmark 81</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 11: Technical Guide -->
+<section class="py-section-gap px-margin-desktop bg-primary text-white overflow-hidden relative">
+<div class="absolute top-0 right-0 w-64 h-64 bg-gold-accent/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl"></div>
+<div class="max-w-container-max mx-auto relative z-10 transition-all duration-1000 opacity-100">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+<div>
+<span class="font-label-md text-label-md uppercase text-gold-accent font-bold tracking-[0.3em] block mb-6 text-shadow-strong">HƯỚNG DẪN KỸ THUẬT</span>
+<h2 class="font-headline-lg mb-12 font-bold leading-tight">Quy Trình Thi Công<br/>Chuẩn Chuyên Gia</h2>
+<div class="space-y-10">
+<div class="flex gap-6">
+<div class="w-12 h-12 rounded-full border-2 border-gold-accent flex items-center justify-center shrink-0 font-headline-md text-gold-accent font-bold">1</div>
+<div>
+<h4 class="font-label-md text-label-md uppercase mb-2 font-bold tracking-wider">Làm sạch bề mặt</h4>
+<p class="font-body-md text-white/90 font-medium">Đảm bảo bề mặt khô ráo, không bụi bẩn và dầu mỡ để độ bám dính đạt 100%.</p>
+</div>
+</div>
+<div class="flex gap-6">
+<div class="w-12 h-12 rounded-full border-2 border-gold-accent flex items-center justify-center shrink-0 font-headline-md text-gold-accent font-bold">2</div>
+<div>
+<h4 class="font-label-md text-label-md uppercase mb-2 font-bold tracking-wider">Đi keo hình chữ Z</h4>
+<p class="font-body-md text-white/90 font-medium">Sử dụng súng bắn keo chuyên dụng, đi keo theo đường zic-zac hoặc các điểm đều nhau.</p>
+</div>
+</div>
+<div class="flex gap-6">
+<div class="w-12 h-12 rounded-full border-2 border-gold-accent flex items-center justify-center shrink-0 font-headline-md text-gold-accent font-bold">3</div>
+<div>
+<h4 class="font-label-md text-label-md uppercase mb-2 font-bold tracking-wider">Ép cố định</h4>
+<p class="font-body-md text-white/90 font-medium">Dán vật liệu vào vị trí và ép mạnh trong 30 giây. Keo sẽ định hình sau 5-10 phút.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-white/10 backdrop-blur-xl p-10 border border-white/20 rounded-xl shadow-2xl">
+<h4 class="font-headline-md mb-8 text-gold-accent font-bold">Định mức sử dụng</h4>
+<div class="space-y-8">
+<div class="flex justify-between items-end border-b border-white/20 pb-4">
+<span class="font-label-md uppercase font-bold tracking-widest">1 Ống Keo (310ml)</span>
+<span class="font-headline-md text-white font-bold">1.5 - 2.0 m²</span>
+</div>
+<p class="font-body-md text-sm text-white/80 font-medium italic">*Định mức có thể thay đổi tùy theo độ phẳng của bề mặt tường và mật độ đi keo.</p>
+<div class="pt-8">
+<div class="bg-black/30 p-6 border-l-4 border-gold-accent">
+<p class="font-label-md text-sm uppercase mb-2 font-bold text-gold-accent tracking-widest">Mẹo từ chuyên gia:</p>
+<p class="font-body-md text-[15px] text-white font-medium italic leading-relaxed">"Đối với các tấm than tre kích thước lớn, nên tăng cường keo ở các góc cạnh để đảm bảo độ bền vĩnh cửu."</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 12: Agency & Samples -->
+<section class="py-section-gap bg-surface">
+<div class="max-w-4xl mx-auto px-margin-mobile text-center border-[3px] border-gold-accent/40 p-16 relative transition-all duration-1000 opacity-100 shadow-lg">
+<div class="absolute -top-6 left-1/2 -translate-x-1/2 bg-surface px-8 font-label-md text-label-md text-gold-accent-dark font-bold uppercase tracking-[0.3em]">Hợp tác đại lý</div>
+<h2 class="font-headline-lg text-on-surface font-bold mb-6">Đồng Hành Cùng Aqua Bond</h2>
+<p class="font-body-lg text-on-surface-variant mb-10 max-w-2xl mx-auto font-medium">
+            Chúng tôi đang tìm kiếm đối tác phân phối trên toàn quốc với chính sách chiết khấu hấp dẫn và hỗ trợ Marketing chuyên nghiệp.
+        </p>
+<div class="flex flex-wrap justify-center gap-6">
+<button class="bg-gold-accent text-white px-10 py-4 font-label-md text-label-md font-bold uppercase tracking-widest hover:brightness-110 transition-all shadow-md">Đăng ký Đại lý</button>
+<button class="border-2 border-gold-accent text-gold-accent-dark px-10 py-4 font-label-md text-label-md font-bold uppercase tracking-widest hover:bg-gold-accent hover:text-white transition-all">Yêu cầu bộ mẫu thử</button>
+</div>
+</div>
+</section>
+<!-- Section 13: Main Lead Form -->
+<section class="py-section-gap px-margin-desktop bg-surface-container-low border-t border-outline-variant/40" id="quote-form">
+<div class="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 transition-all duration-1000 opacity-100">
+<div>
+<h2 class="font-headline-lg text-primary mb-6 font-bold">Bắt đầu Dự án<br/>của Bạn</h2>
+<p class="font-body-md text-on-surface font-medium mb-12">
+                Hãy cho chúng tôi biết nhu cầu của bạn, đội ngũ kỹ thuật của Aqua Bond sẽ liên hệ tư vấn giải pháp tối ưu nhất trong vòng 15 phút.
+            </p>
+<div class="space-y-6">
+<div class="flex gap-4 items-center">
+<span class="material-symbols-outlined text-gold-accent-dark font-bold">location_on</span>
+<span class="font-label-md text-label-md uppercase text-on-surface font-bold tracking-wide">Phân phối Toàn quốc</span>
+</div>
+<div class="flex gap-4 items-center">
+<span class="material-symbols-outlined text-gold-accent-dark font-bold">verified_user</span>
+<span class="font-label-md text-label-md uppercase text-on-surface font-bold tracking-wide">Bảo hành Kết dính 10 năm</span>
+</div>
+</div>
+</div>
+<div class="bg-white p-10 shadow-2xl border border-outline-variant/40">
+<form class="space-y-6" id="main-lead-form" onsubmit="submitMainLead(event)">
+<div class="flex gap-4 p-1 bg-surface-container-low rounded-lg mb-8" id="customer-type-toggle">
+<button class="flex-1 py-3 font-label-md text-label-md uppercase bg-white shadow-md border-2 border-gold-accent text-gold-accent-dark font-bold" data-type="Nhà Thầu/KTS" onclick="selectCustomerType(this)" type="button">Nhà Thầu/KTS</button>
+<button class="flex-1 py-3 font-label-md text-label-md uppercase text-on-surface font-bold hover:text-gold-accent-dark transition-colors border-2 border-transparent" data-type="Đại Lý/Cửa Hàng" onclick="selectCustomerType(this)" type="button">Đại Lý/Cửa Hàng</button>
+</div>
+<div>
+<label class="block font-label-md text-[11px] uppercase text-on-surface-variant font-bold mb-2" for="main-name">Họ và tên</label>
+<input class="w-full border-b-2 border-outline-variant py-3 focus:border-gold-accent outline-none font-body-md text-on-surface transition-colors" id="main-name" required="" type="text"/>
+</div>
+<div>
+<label class="block font-label-md text-[11px] uppercase text-on-surface-variant font-bold mb-2" for="main-phone">Số điện thoại</label>
+<input class="w-full border-b-2 border-outline-variant py-3 focus:border-gold-accent outline-none font-body-md text-on-surface transition-colors" id="main-phone" pattern="(0|\+84)[0-9\s.-]{8,12}" required="" title="Vui lòng nhập số điện thoại hợp lệ (VD: 0901234567)" type="tel"/>
+</div>
+<div>
+<label class="block font-label-md text-[11px] uppercase text-on-surface-variant font-bold mb-2" for="main-material">Loại vật liệu đang thi công</label>
+<select class="w-full border-b-2 border-outline-variant py-3 focus:border-gold-accent outline-none font-body-md text-on-surface transition-colors appearance-none bg-transparent" id="main-material">
+<option>Tấm than tre</option>
+<option>Tấm Nano / PVC</option>
+<option>Gương / Kính</option>
+<option>Khác</option>
+</select>
+</div>
+<button class="w-full bg-gold-accent text-white py-5 font-label-md text-label-md font-bold uppercase tracking-widest hover:brightness-110 transition-all shadow-lg mt-4" type="submit">Gửi Yêu Cầu Tư Vấn</button>
+<p class="hidden text-center font-body-md font-bold text-primary bg-surface-container-low border border-gold-accent/40 py-4 px-6" id="main-form-success">✓ Đã gửi thành công! Chúng tôi sẽ liên hệ trong 15 phút.</p>
+</form>
+</div>
+</div>
+</section>
+<!-- Section 14: FAQ -->
+<section class="py-section-gap px-margin-desktop bg-surface">
+<div class="max-w-3xl mx-auto transition-all duration-1000 opacity-100">
+<h2 class="font-headline-md text-on-surface text-center mb-12 font-bold">Câu Hỏi Thường Gặp</h2>
+<div class="space-y-4">
+<details class="group border-b-2 border-outline-variant/30 pb-4">
+<summary class="list-none cursor-pointer flex justify-between items-center py-4">
+<h4 class="font-label-md text-label-md uppercase text-on-surface font-bold tracking-tight">Keo Aqua Bond có bị ố vàng theo thời gian không?</h4>
+<span class="material-symbols-outlined group-open:rotate-180 transition-transform text-gold-accent-dark font-bold">expand_more</span>
+</summary>
+<p class="font-body-md text-on-surface-variant px-4 pb-4 font-medium leading-relaxed">Không. Aqua Bond Clear được tích hợp khả năng chống tia UV cao cấp, giúp keo luôn giữ độ trong suốt và không bị ngả vàng kể cả dưới ánh nắng trực tiếp.</p>
+</details>
+<details class="group border-b-2 border-outline-variant/30 pb-4">
+<summary class="list-none cursor-pointer flex justify-between items-center py-4">
+<h4 class="font-label-md text-label-md uppercase text-on-surface font-bold tracking-tight">Một ống keo thi công được bao nhiêu m2?</h4>
+<span class="material-symbols-outlined group-open:rotate-180 transition-transform text-gold-accent-dark font-bold">expand_more</span>
+</summary>
+<p class="font-body-md text-on-surface-variant px-4 pb-4 font-medium leading-relaxed">Trung bình một ống 310ml thi công được từ 1.5 đến 2.0 m² tùy thuộc vào độ phẳng của tường và loại vật liệu ốp.</p>
+</details>
+<details class="group border-b-2 border-outline-variant/30 pb-4">
+<summary class="list-none cursor-pointer flex justify-between items-center py-4">
+<h4 class="font-label-md text-label-md uppercase text-on-surface font-bold tracking-tight">Có thể dán được gương trên trần nhà không?</h4>
+<span class="material-symbols-outlined group-open:rotate-180 transition-transform text-gold-accent-dark font-bold">expand_more</span>
+</summary>
+<p class="font-body-md text-on-surface-variant px-4 pb-4 font-medium leading-relaxed">Hoàn toàn được. Aqua Bond Clear với sức mạnh 150kg và khả năng chống chảy xệ cực tốt là lựa chọn hàng đầu cho các ứng dụng dán gương trần kiến trúc.</p>
+</details>
+</div>
+</div>
+</section>
+<!-- Section 15: Footer & Mobile Action -->
+<footer class="w-full py-section-gap bg-surface-container-low border-t border-outline-variant/40">
+<div class="grid grid-cols-12 gap-gutter px-margin-desktop mx-auto">
+<div class="col-span-12 md:col-span-4 mb-12 md:mb-0">
+<div class="font-headline-md text-headline-md text-primary font-bold mb-8">AQUA BOND</div>
+<p class="font-body-md text-on-surface font-medium max-w-xs mb-8 leading-relaxed">
+                Đối tác tin cậy trong các giải pháp vật liệu hoàn thiện nội thất và kiến trúc cao cấp tại Việt Nam. Cam kết chất lượng vĩnh cửu.
+            </p>
+<div class="flex gap-6">
+<a class="w-12 h-12 border-2 border-outline-variant flex items-center justify-center hover:border-gold-accent hover:text-gold-accent-dark transition-all text-on-surface" href="#">
+<span class="material-symbols-outlined text-lg font-bold">public</span>
+</a>
+<a class="w-12 h-12 border-2 border-outline-variant flex items-center justify-center hover:border-gold-accent hover:text-gold-accent-dark transition-all text-on-surface" href="#">
+<span class="material-symbols-outlined text-lg font-bold">share</span>
+</a>
+</div>
+</div>
+<div class="col-span-6 md:col-span-2">
+<h5 class="font-label-md text-label-md uppercase text-gold-accent-dark font-bold mb-8 tracking-widest">Sản phẩm</h5>
+<ul class="space-y-4">
+<li class=""><a class="font-label-md text-label-md text-on-surface font-bold hover:text-gold-accent-dark transition-colors" href="#">Aqua Bond Beige</a></li>
+<li class=""><a class="font-label-md text-label-md text-on-surface font-bold hover:text-gold-accent-dark transition-colors" href="#">Aqua Bond Clear</a></li>
+<li class=""><a class="font-label-md text-label-md text-on-surface font-bold hover:text-gold-accent-dark transition-colors" href="#">Bộ dụng cụ thi công</a></li>
+<li class=""><a class="font-label-md text-label-md text-on-surface font-bold hover:text-gold-accent-dark transition-colors" href="#">Tài liệu kỹ thuật</a></li>
+</ul>
+</div>
+<div class="col-span-6 md:col-span-2">
+<h5 class="font-label-md text-label-md uppercase text-gold-accent-dark font-bold mb-8 tracking-widest">Công ty</h5>
+<ul class="space-y-4">
+<li class=""><a class="font-label-md text-label-md text-on-surface font-bold hover:text-gold-accent-dark transition-colors" href="#">Về chúng tôi</a></li>
+<li class=""><a class="font-label-md text-label-md text-on-surface font-bold hover:text-gold-accent-dark transition-colors" href="#">Dự án tiêu biểu</a></li>
+<li class=""><a class="font-label-md text-label-md text-on-surface font-bold hover:text-gold-accent-dark transition-colors" href="#">Chính sách đại lý</a></li>
+<li class=""><a class="font-label-md text-label-md text-on-surface font-bold hover:text-gold-accent-dark transition-colors" href="#">Liên hệ</a></li>
+</ul>
+</div>
+<div class="col-span-12 md:col-span-4 mt-12 md:mt-0">
+<h5 class="font-label-md text-label-md uppercase text-gold-accent-dark font-bold mb-8 tracking-widest">Đăng ký nhận báo giá thầu</h5>
+<div class="relative border-b-2 border-outline-variant focus-within:border-gold-accent transition-colors">
+<input class="w-full bg-transparent border-none py-4 px-0 font-label-md text-label-md font-bold focus:ring-0 text-on-surface placeholder:text-outline-variant" placeholder="Email của bạn" type="email"/>
+<button class="absolute right-0 top-1/2 -translate-y-1/2">
+<span class="material-symbols-outlined text-gold-accent-dark font-bold">arrow_forward</span>
+</button>
+</div>
+<p class="mt-4 text-[13px] text-on-surface-variant font-bold">Cập nhật bảng giá mới nhất cho kiến trúc sư và nhà thầu.</p>
+</div>
+<div class="col-span-12 mt-24 pt-12 border-t border-outline-variant/20 flex flex-col md:flex-row justify-between items-center gap-6">
+<span class="font-label-md text-label-md text-on-surface-variant font-bold">© 2024 AQUA BOND ARCHITECTURAL MATERIALS. ALL RIGHTS RESERVED.</span>
+<div class="flex gap-8">
+<span class="font-label-md text-[11px] text-on-surface-variant font-bold uppercase tracking-widest">Minimalist Engineering</span>
+<span class="font-label-md text-[11px] text-on-surface-variant font-bold uppercase tracking-widest">Vietnamese Excellence</span>
+</div>
+</div>
+</div>
+</footer>
+<!-- Mobile Action Buttons -->
+<div class="fixed bottom-6 left-6 right-6 z-[60] md:hidden flex gap-4">
+<a class="flex-1 bg-gold-accent text-white h-14 flex items-center justify-center gap-3 shadow-2xl rounded-lg font-bold" href="tel:0900000000">
+<span class="material-symbols-outlined font-bold">call</span>
+<span class="font-label-md uppercase tracking-widest">Gọi ngay</span>
+</a>
+<a class="w-14 h-14 bg-[#0068FF] text-white flex items-center justify-center shadow-2xl rounded-lg" href="#">
+<svg class="w-6 h-6 fill-current" viewbox="0 0 24 24"><path d="M12.003 2c-5.522 0-9.997 4.477-9.997 10 0 5.523 4.475 10 9.997 10 5.525 0 10.003-4.477 10.003-10 0-5.523-4.478-10-10.003-10zm4.23 12.25c-.21.56-.93 1.05-1.52 1.15-.42.07-.96.11-2.4-.48-1.84-.76-3.03-2.62-3.12-2.74-.09-.12-.76-.99-.76-1.89 0-.9.46-1.34.63-1.53.17-.18.37-.23.49-.23h.36c.11 0 .26.01.37.28.12.3.4.98.44 1.06.04.08.06.18.01.29-.06.1-.09.16-.17.27-.09.1-.18.23-.26.31-.09.09-.18.19-.08.36.1.17.46.75.98 1.22.68.6 1.24.79 1.42.88.18.09.28.08.38-.04.11-.12.45-.52.57-.7.12-.18.23-.15.4-.09.16.06 1.02.48 1.2.57.18.09.29.14.34.22.04.08.04.46-.17 1.02z"></path></svg>
+</a>
+</div>
+<script>
+    // ===== Modal Logic =====
+    const modal = document.getElementById('welcome-modal');
+
+    function openModal() {
+        modal.style.display = 'flex';
+        // force reflow then fade in
+        requestAnimationFrame(() => {
+            requestAnimationFrame(() => modal.classList.remove('opacity-0'));
+        });
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+        modal.classList.add('opacity-0');
+        document.body.style.overflow = '';
+        setTimeout(() => {
+            modal.style.display = 'none';
+        }, 500);
+    }
+
+    // Auto show welcome popup once per browser (after 4s), or via CTA buttons.
+    window.addEventListener('load', () => {
+        if (!localStorage.getItem('aquabond_lead_captured') && !sessionStorage.getItem('aquabond_popup_shown')) {
+            setTimeout(() => {
+                sessionStorage.setItem('aquabond_popup_shown', '1');
+                openModal();
+            }, 4000);
+        }
+    });
+
+    // Close modal on overlay click / Escape
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal();
+    });
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.style.display === 'flex') closeModal();
+    });
+
+    // ===== Lead capture =====
+    function submitPopupLead(e) {
+        e.preventDefault();
+        const name = document.getElementById('popup-name').value.trim();
+        const phone = document.getElementById('popup-phone').value.trim();
+        saveLead({ source: 'popup', name, phone });
+        document.getElementById('modal-form-content').classList.add('hidden');
+        document.getElementById('modal-success-content').classList.remove('hidden');
+    }
+
+    let selectedCustomerType = 'Nhà Thầu/KTS';
+    function selectCustomerType(btn) {
+        selectedCustomerType = btn.dataset.type;
+        document.querySelectorAll('#customer-type-toggle button').forEach(b => {
+            b.classList.remove('bg-white', 'shadow-md', 'border-gold-accent', 'text-gold-accent-dark');
+            b.classList.add('text-on-surface', 'border-transparent');
+        });
+        btn.classList.add('bg-white', 'shadow-md', 'border-gold-accent', 'text-gold-accent-dark');
+        btn.classList.remove('text-on-surface', 'border-transparent');
+    }
+
+    function submitMainLead(e) {
+        e.preventDefault();
+        const lead = {
+            source: 'main-form',
+            customerType: selectedCustomerType,
+            name: document.getElementById('main-name').value.trim(),
+            phone: document.getElementById('main-phone').value.trim(),
+            material: document.getElementById('main-material').value
+        };
+        saveLead(lead);
+        const form = document.getElementById('main-lead-form');
+        form.querySelector('button[type="submit"]').classList.add('hidden');
+        document.getElementById('main-form-success').classList.remove('hidden');
+        form.reset();
+    }
+
+    function saveLead(lead) {
+        lead.time = new Date().toISOString();
+        try {
+            const leads = JSON.parse(localStorage.getItem('aquabond_leads') || '[]');
+            leads.push(lead);
+            localStorage.setItem('aquabond_leads', JSON.stringify(leads));
+            localStorage.setItem('aquabond_lead_captured', '1');
+        } catch (err) { /* storage unavailable */ }
+        console.log('Aqua Bond lead captured:', lead);
+    }
+
+    function scrollToForm() {
+        document.getElementById('quote-form').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    window.addEventListener('scroll', () => {
+        const scroll = window.pageYOffset;
+        const heroBg = document.querySelector('.parallax-bg');
+        if (heroBg) {
+            heroBg.style.transform = `translateY(${scroll * 0.2}px) scale(${1 + scroll * 0.0001})`;
+        }
+    });
+
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('opacity-100');
+                entry.target.classList.remove('opacity-0', 'translate-y-8');
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('section > div, header > div').forEach(el => {
+        if (!el.classList.contains('absolute')) {
+            el.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-8');
+            observer.observe(el);
+        }
+    });
+</script>
+</body></html>
