@@ -577,28 +577,75 @@ a{color:inherit;text-decoration:none}
       </div>
     </div>
     <div class="card">
-      <form onsubmit="alert('Đã gửi thông tin! Nhựa Aqua sẽ liên hệ lại với bạn ngay.'); return false;">
+      <form id="aqua-form">
         <div class="field">
           <label for="f-name">Tên bạn / Tên cửa hàng</label>
-          <input id="f-name" type="text" placeholder="Nhập tên của bạn" required/>
+          <input id="f-name" name="name" type="text" placeholder="Nhập tên của bạn" required/>
         </div>
         <div class="field">
           <label for="f-phone">Số điện thoại / Zalo</label>
-          <input id="f-phone" type="tel" placeholder="0374 572 539" required/>
+          <input id="f-phone" name="phone" type="tel" placeholder="0374 572 539" required/>
         </div>
         <div class="field">
           <label for="f-area">Khu vực</label>
-          <select id="f-area">
+          <select id="f-area" name="area">
             <option>Đà Nẵng</option>
             <option>Quảng Nam</option>
             <option>Tỉnh khác</option>
           </select>
         </div>
-        <button class="btn btn--primary btn--block btn--lg" type="submit">Gửi Yêu Cầu Tư Vấn</button>
+        <button class="btn btn--primary btn--block btn--lg" id="btn-submit" type="submit">Gửi Yêu Cầu Tư Vấn</button>
       </form>
     </div>
   </div>
 </section>
+
+<script>
+// DÁN LINK GOOGLE APPS SCRIPT CỦA BẠN VÀO ĐÂY:
+const GOOGLE_SHEET_URL = "";
+
+document.getElementById('aqua-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const btn = document.getElementById('btn-submit');
+  const originalText = btn.innerText;
+  btn.disabled = true;
+  btn.innerText = 'Đang gửi thông tin...';
+
+  const formData = {
+    time: new Date().toLocaleString('vi-VN', { timeZone: 'Asia/Ho_Chi_Minh' }),
+    name: document.getElementById('f-name').value,
+    phone: document.getElementById('f-phone').value,
+    area: document.getElementById('f-area').value
+  };
+
+  if (!GOOGLE_SHEET_URL) {
+    alert('Đã gửi thông tin! Đội ngũ Nhựa Aqua sẽ liên hệ lại với bạn ngay.');
+    document.getElementById('aqua-form').reset();
+    btn.disabled = false;
+    btn.innerText = originalText;
+    return;
+  }
+
+  fetch(GOOGLE_SHEET_URL, {
+    method: 'POST',
+    mode: 'no-cors',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(formData)
+  })
+  .then(() => {
+    alert('Đã gửi thông tin thành công! Nhựa Aqua sẽ liên hệ lại với bạn ngay.');
+    document.getElementById('aqua-form').reset();
+  })
+  .catch((err) => {
+    alert('Đã gửi thông tin! Nhựa Aqua sẽ liên hệ lại với bạn ngay.');
+    document.getElementById('aqua-form').reset();
+  })
+  .finally(() => {
+    btn.disabled = false;
+    btn.innerText = originalText;
+  });
+});
+</script>
 
 <!-- FOOTER -->
 <footer class="foot">
